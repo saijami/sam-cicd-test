@@ -1,6 +1,5 @@
 {
     "Parameters": {
-        "Environment": "Dev",
-        "OriginUrl": "*"
+        "Environment": "Dev"
     }
 }
