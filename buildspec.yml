@@ -2,14 +2,14 @@ version: 0.0
 environment_variables:
     plaintext:
         "INPUT_FILE": "saml.yaml"
-        "S3_BUCKET": ""
+        "S3_BUCKET": "pageapitemp"
 containers:
     LambdaFunctions:
         phases:
             during_build:
                 commands:
                     - npm install
-                    - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
+                    - aws cloudformation package --template saml.yaml --s3-bucket pageapitemp --output-template post-saml.yaml
         artifacts:
             files:
                 - post-saml.yaml
